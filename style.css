@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  font-family: 'Mulish', cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: rgb(196, 150, 129);
+}
+
+.expanding-cards__container {
+  display: flex;
+  justify-content: center;
+  width: 90vw;
+  height: 80vh;
+  gap: 10px;
+}
+
+.card.imagem1 {
+  background-image: url('./img/pastor-alemao.jpg');
+}
+
+.card.imagem2 {
+  background-image: url('./img/husky.jpg');
+
+}
+
+.card.imagem3 {
+  background-image: url('./img/Doguinho\ caramelho.jpg');
+}
+
+.card.imagem4 {
+  background-image: url('./img/labrador.jpg');
+}
+
+.card.imagem5 {
+  background-image: url('./img/golden.jpg');
+}
+
+.card {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex: 1;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0px 1px 5px 0 #000;
+  transition: flex 0.5s ease-in-out;
+}
+
+.card.active {
+  flex: 4;
+}
+
+.card h3 {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.718);
+  position: absolute;
+  bottom: 30px;
+  left: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  opacity: 0;
+}
+
+.card.active h3 {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+@media (max-width: 500px) {
+  .expanding-cards__container {}
+
+  .card:nth-of-type(4) {
+    display: none;
+  }
+
+  .card:nth-of-type(5) {
+    display: none;
+  }
+}
